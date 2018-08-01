@@ -1,9 +1,16 @@
 import io from 'socket.io-client'
 
 import listenerTypes from './listenerTypes'
-const host = 'localhost'
-const port = 9000
-const uri = `http://${host}:${port}`
+
+let uri
+if (process.env.NODE_ENV === 'development') {
+  const host = 'localhost'
+  const port = 9000
+  uri = `http://${host}:${port}`
+} else {
+  const host = 'cryptic-mesa-74014.herokuapp.com'
+  uri = `https://${host}`
+}
 const socket = io(uri)
 
 /**
