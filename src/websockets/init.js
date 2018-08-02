@@ -3,14 +3,18 @@ import io from 'socket.io-client'
 import listenerTypes from './listenerTypes'
 
 let uri
-if (process.env.NODE_ENV === 'development') {
-  const host = 'localhost'
-  const port = 9000
-  uri = `http://${host}:${port}`
-} else {
-  const host = 'cryptic-mesa-74014.herokuapp.com'
+let host
+if (process.env.NODE_ENV === 'production') {
+  host = 'cryptic-mesa-74014.herokuapp.com'
   uri = `https://${host}`
+} else {
+  host = 'localhost'
+  const port = process.env.PORT || 3000
+  uri = `http://${host}:${port}`
 }
+
+console.log('process env', process.env)
+
 const socket = io(uri)
 
 /**
