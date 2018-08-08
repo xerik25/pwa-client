@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'production') {
   uri = `https://${host}`
 } else {
   host = 'localhost'
-  const port = process.env.PORT || 3000
+  const port = process.env.PORT || 9000
   uri = `http://${host}:${port}`
 }
 
