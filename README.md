@@ -1,5 +1,4 @@
 # Pwa-Client
-* test change
 ### Overview
 * Created with create-react-app
 * Consumed by the [pwa-server repo]()
