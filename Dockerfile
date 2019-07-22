@@ -11,4 +11,4 @@ RUN yarn
 
 COPY . /srv/app/client
 
-CMD ["yarn", "build"]
+CMD ["yarn", "start"]
